@@ -3,7 +3,7 @@ const cronometroIni = ( minutos = 1000, contentElement, reloj , accion=({content
     let contador =minutos/1000; 
     contentElement.appendChild(reloj);
     const idSetInterval = setInterval(()=>{
-        accion({contentElement, reloj, contador}); //envio obj
+        accion({contentElement, relojC:reloj, contador}); //envio obj
         contador--;
 
         if(contador <= 0) {
