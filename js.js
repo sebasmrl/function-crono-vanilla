@@ -1,6 +1,7 @@
 
-const cronometroIni = ( minutos = 1000, contentElement, reloj , accion=({contentElement, reloj, contador})=>{} ) => { 
-    let contador =minutos/1000; 
+const cronometroIni = ( minutos = 1, contentElement, reloj , accion=({contentElement, reloj, contador})=>{} ) => { 
+    
+    let contador = minutos*60;
     contentElement.appendChild(reloj);
     const idSetInterval = setInterval(()=>{
         accion({contentElement, reloj, contador}); //envio obj
@@ -32,10 +33,10 @@ const createCrono = (time,elementoContenedor, idCronometro)=>{
 
 }
 
-createCrono(5000, elementoContenedor, 1);
-createCrono(3000, elementoContenedor, 2);
-createCrono(2000, elementoContenedor, 3);
-createCrono(4000, elementoContenedor, 4);
+createCrono(1, elementoContenedor, 1);
+createCrono(3, elementoContenedor, 2);
+createCrono(2, elementoContenedor, 3);
+createCrono(3, elementoContenedor, 4);
 
 
 const btnCreateCrono =document.getElementById('crono');
