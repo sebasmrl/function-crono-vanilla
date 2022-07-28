@@ -3,7 +3,7 @@ const cronometroIni = ( minutos = 1000, contentElement, reloj , accion=({content
     let contador =minutos/1000; 
     contentElement.appendChild(reloj);
     const idSetInterval = setInterval(()=>{
-        accion({contentElement, relojC:reloj, contador}); //envio obj
+        accion({contentElement, reloj, contador}); //envio obj
         contador--;
 
         if(contador <= 0) {
@@ -25,9 +25,9 @@ const createCrono = (time,elementoContenedor, idCronometro)=>{
     reloj.textContent = 'Usuario'+idCronometro;
     
 
-    cronometroIni(time, elementoContenedor, reloj,  ({contador, relojC})=>{ //desestructuracion de obj mandado en la callback
+    cronometroIni(time, elementoContenedor, reloj,  ({contador, reloj})=>{ //desestructuracion de obj mandado en la callback
         //defina la tranformacion del reloj
-        relojC.textContent = relojC.textContent +' | '+contador 
+        reloj.textContent = reloj.textContent +' | '+contador 
     });
 
 }
