@@ -25,9 +25,9 @@ const createCrono = (time,elementoContenedor, idCronometro)=>{
     reloj.textContent = 'Usuario'+idCronometro;
     
 
-    cronometroIni(time, elementoContenedor, reloj,  ({contador})=>{ //desestructuracion de obj mandado en la callback
+    cronometroIni(time, elementoContenedor, reloj,  ({contador, relojC})=>{ //desestructuracion de obj mandado en la callback
         //defina la tranformacion del reloj
-        reloj.textContent = reloj.textContent +' | '+contador 
+        relojC.textContent = relojC.textContent +' | '+contador 
     });
 
 }
